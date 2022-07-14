@@ -9,4 +9,6 @@ class User < ApplicationRecord
     validates :age, numericality: { greater_than: 18 }
     validates :phone_number, length: { minimum: 10 }
     validates :username, :email, uniqueness: true
+
+
 end

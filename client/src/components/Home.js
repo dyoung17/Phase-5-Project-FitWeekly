@@ -25,7 +25,7 @@ function Home({ user }) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          slots: workout.slots - 1
+          slots: workout.slots + 1
         })
       })).json();
 

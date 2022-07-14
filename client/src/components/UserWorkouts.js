@@ -7,7 +7,7 @@ function UserWorkouts({ workout, handleDeleteSignup}) {
     return (
         <div className="workoutdetails">
             <h2>{workout.name}</h2>
-            <h5>Date: {workout.datewithtime}</h5>
+            <h5>Date: {workout.date}</h5>
             <button onClick={() => handleDeleteSignup(workout)}>Leave Workout</button>
         </div>
     );
