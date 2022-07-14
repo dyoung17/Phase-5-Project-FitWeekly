@@ -7,7 +7,7 @@ class Workout < ApplicationRecord
     validates :slots, length: {maximum: 30};
 
     def datewithtime
-        self.date.strftime('%a - %d of %B, %Y')
+        self.date.strftime('%a - %d of %B, %Y, %H:%M')
     end
 
 end

@@ -10,7 +10,7 @@ class SignupsController < ApplicationController
     end
     
     def create
-        signup = Signup.create!(signup_params)
+        signup = Signup.create(signup_params)
         render json: signup, status: :created
     end
 

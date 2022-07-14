@@ -4,13 +4,13 @@ import WorkoutDetails from "./WorkoutDetails";
 
 import WorkoutForm from "./WorkoutForm";
 
-WorkoutsContainer.defaultProps = {
-  user: null
-}
+ WorkoutsContainer.defaultProps = {
+   user: null
+   }
 
-WorkoutsContainer.propTypes = {
-  user: PropTypes.instanceOf(Object)
-};
+ WorkoutsContainer.propTypes = {
+   user: PropTypes.instanceOf(Object)
+ };
 
 function WorkoutsContainer({ user }) {
   const [workouts, setWorkouts] = useState([]);
@@ -19,7 +19,7 @@ function WorkoutsContainer({ user }) {
 
   //const [sortedWorkouts, setSortedWorkouts] = useState([])  
 
-  console.log(user)
+  console.log('.......', user)
 
   useEffect(() => {
     fetch("/workouts")
@@ -48,7 +48,7 @@ function WorkoutsContainer({ user }) {
   }
 
   return (
-    <div>
+    <div className='workout-container'>
       {user && user.admin ? (<WorkoutForm handleAddWorkout={handleAddWorkout}/>) : <p></p>} 
       {workouts.map((workout) => {
         return <WorkoutDetails key={workout.id} workout={workout} user={user} onWorkoutDelete={onWorkoutDelete} handleUpdateWorkout={handleUpdateWorkout} />

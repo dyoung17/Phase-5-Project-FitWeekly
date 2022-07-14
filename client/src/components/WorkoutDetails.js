@@ -7,10 +7,10 @@ function WorkoutDetails({ workout, user, onEventDelete, handleUpdateWorkout }) {
   const [isEditing, setIsEditing] = useState(false);
 
   //const { getCollapseProps, getToggleProps, isExpanded } = useCollapse();
-
+  
   function handleUserSignUp() {
     const signupData = {
-      workout_id: workout.id,
+      workout_id: workout.id, user_id: user.id
     };
     fetch("/signups", {
       method: "POST",
@@ -18,7 +18,7 @@ function WorkoutDetails({ workout, user, onEventDelete, handleUpdateWorkout }) {
       body: JSON.stringify(signupData),
     })
       .then((r) => r.json())
-      .then((data) => console.log(data));
+      .then((data) => setSignedUp(data));
     console.log(`fetch console log ${workout.id}, ${user.id}`);
   }
 
@@ -36,13 +36,14 @@ function WorkoutDetails({ workout, user, onEventDelete, handleUpdateWorkout }) {
       <h5>Description: {workout.description}</h5>
       <h5>Date: {workout.datewithtime}</h5>
       <h6>Slots: {workout.slots}</h6>
-      {signedUp ? (
+      <iframe src={workout.video_url}/> 
+      {user && signedUp ? (
         <p>See you there!</p>
       ) : (
         <button onClick={handleUserSignUp}>Join Workout</button>
       )}
-      <button onClick={() => setIsEditing((isEditing) => !isEditing)}>⭐Edit</button>
-      <button onClick={handleDeleteClick} >❌Delete this Workout</button>
+      {user && user.admin ? (<button onClick={() => setIsEditing((isEditing) => !isEditing)}>Edit</button>) : (<p></p>)}
+      {user && user.admin ? (<button onClick={handleDeleteClick}>Delete</button>) : (<p></p>)}
       {isEditing ? (
         <EditWorkout workout={workout} handleUpdateWorkout={handleUpdateWorkout}/>
       ) : (
