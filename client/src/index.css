@@ -10,7 +10,7 @@ body {
 }
 
 .button {
-  background-color: #e2bc8d;;
+  background-color: #e2bc8d;
   border: 4px solid rgba(84, 55, 34, 0.7);
   color: rgb(14, 14, 14);
   padding: 15px 32px;
@@ -46,15 +46,19 @@ code {
 
 .signup-form-container {
   width: 10%;
-  padding-left: 8%;
-  padding-right: 20%;
+  padding-left: 70px;
+  padding-right: 70px;
   margin: auto;
   text-align: left;
-  background-color: #e2bc8d;;
+  background-color: #e2bc8d;
   border-radius: 12px;
   padding-bottom: 2%;
   padding-top: 8px;
   margin-top: 10px;
+}
+
+.signup-form-container label {
+  margin-bottom: 0;
 }
 
 .workoutdetails {
@@ -66,7 +70,6 @@ code {
   padding: 10px;
   margin: 10px;
 }
-
 
 .navbar {
   padding-top: 15px;
@@ -82,24 +85,23 @@ code {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
-
 .input {
   border: 4px, black;
 }
 
 .form {
-  padding: 1rem;
+  width: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-weight: bold;
 }
 
-.VE-text{
+.VE-text {
   font-size: 30px;
-  color: #e2bc8d
+  color: #e2bc8d;
 }
 
-.workout-container{
+.workout-container {
   justify-content: flex-start;
 }

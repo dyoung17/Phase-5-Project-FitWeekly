@@ -37,6 +37,7 @@ class UsersController < ApplicationController
         render json: { user: user }
     end
 
+
     private
     
     def user_params

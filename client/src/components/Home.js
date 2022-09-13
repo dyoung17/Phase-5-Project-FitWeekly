@@ -38,11 +38,13 @@ function Home({ user }) {
       setSignups(updatedsignups);
 
       const updatedUserWorkouts = userWorkouts.filter((w) => w.id !== workout.id);
-      setUserWorkouts(updatedUserWorkouts);      
+      setUserWorkouts(updatedUserWorkouts);
+      localStorage.removeItem(`workout${workout.id}`)
     } catch (err) {
       console.log('an error occurred==>>', err);
     }
   }
+
 
   return (
     //  <div className="profileCard">

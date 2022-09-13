@@ -1,16 +1,16 @@
-import PropTypes from 'prop-types'
+//import PropTypes from 'prop-types'
 import React, { useEffect, useState } from "react";
 import WorkoutDetails from "./WorkoutDetails";
 
 import WorkoutForm from "./WorkoutForm";
 
- WorkoutsContainer.defaultProps = {
-   user: null
-   }
+// WorkoutsContainer.defaultProps = {
+//   user: null
+// }
 
- WorkoutsContainer.propTypes = {
-   user: PropTypes.instanceOf(Object)
- };
+// WorkoutsContainer.propTypes = {
+//   user: PropTypes.instanceOf(Object)
+// };
 
 function WorkoutsContainer({ user }) {
   const [workouts, setWorkouts] = useState([]);
@@ -19,7 +19,7 @@ function WorkoutsContainer({ user }) {
 
   //const [sortedWorkouts, setSortedWorkouts] = useState([])  
 
-  console.log('.......', user)
+  console.log(user)
 
   useEffect(() => {
     fetch("/workouts")
